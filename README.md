@@ -7,8 +7,6 @@
 
 ![](https://img.shields.io/badge/cool-useless-green.svg) [![Lifecycle:
 questioning](https://img.shields.io/badge/lifecycle-questioning-blue.svg)](https://www.tidyverse.org/lifecycle/#questioning)
-[![R build
-status](https://github.com/coolbutuseless/geomlime/workflows/R-CMD-check/badge.svg)](https://github.com/coolbutuseless/geomlime/actions)
 <!-- badges: end -->
 
 `geomlime` provides a bloody `geom_lime()` function for ggplot because

@@ -1,0 +1,97 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(geomlime)
+```
+
+
+
+```{r echo = FALSE, eval = FALSE}
+# Quick logo generation. Borrowed heavily from Nick Tierney's Syn logo process
+library(magick)
+library(showtext)
+font_add_google("Cutive Mono", "gf")
+
+
+# pkgdown::build_site(override = list(destination = "../coolbutuseless.github.io/package/devoutpdf"))
+```
+
+
+```{r echo = FALSE, eval = FALSE}
+img <- image_read("inst/lime.png")
+
+
+hexSticker::sticker(subplot  = img,
+                    s_x      = 1,
+                    s_y      = 1,
+                    s_width  = 0.8,
+                    s_height = 0.95,
+                    package  = "geom\n\nlime",
+                    p_x      = 1,
+                    p_y      = 1,
+                    p_color  = "#223344",
+                    p_family = "gf",
+                    p_size   = 9,
+                    h_size   = 1.2,
+                    h_fill   = "#ffffff",
+                    h_color  = "#223344",
+                    filename = "man/figures/logo.png")
+
+image_read("man/figures/logo.png")
+```
+
+
+
+
+
+# geomlime  <img src="man/figures/logo.png" align="right" height=230/>
+
+<!-- badges: start -->
+![](https://img.shields.io/badge/cool-useless-green.svg)
+[![Lifecycle: questioning](https://img.shields.io/badge/lifecycle-questioning-blue.svg)](https://www.tidyverse.org/lifecycle/#questioning)
+<!-- badges: end -->
+
+`geomlime` provides a bloody `geom_lime()` function for ggplot because of all 
+the zarking times I frakking type `geom_lime()` instead of `geom_line()`
+
+## Installation
+
+You can install from [GitHub](https://github.com/coolbutuseless/geomlime) with:
+
+``` r
+# install.package('remotes')
+remotes::install_github('coolbutuseless/geomlime')
+```
+
+## Example Usage
+
+
+```{r example}
+library(ggplot2)
+library(geomlime)
+
+ggplot(mtcars) +
+  geom_lime(aes(mpg, wt, size = cyl)) + 
+  theme_bw() + 
+  theme(legend.position = 'none')
+
+```
+
+
+
+## Acknowledgements
+
+* R Core for developing and maintaining the language.
+* CRAN maintainers, for patiently shepherding packages onto CRAN and maintaining
+  the repository

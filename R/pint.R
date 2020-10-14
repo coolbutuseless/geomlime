@@ -1,33 +1,14 @@
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#' Key Lime
-#'
-#' @param data,params,size key stuff
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-draw_key_lime <- function(data, params, size) {
-
-  im <- png::readPNG(data$image_filename)
-
-  aspect <- dim(im)[1]/dim(im)[2]
-
-  grid::rasterGrob(
-    image  = im,
-    width  = ggplot2::unit(data$size / size         , 'snpc'),
-    height = ggplot2::unit(data$size / size * aspect, 'snpc')
-  )
-}
-
-
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#' Draw limes
+#' Draw pints
 #'
 #' @param mapping,data,stat,position,...,na.rm,show.legend,inherit.aes see
 #'        documentation for \code{ggplot2::geom_point()}
 #'
 #' @export
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-geom_lime <- function(mapping     = NULL,
+geom_pint <- function(mapping     = NULL,
                       data        = NULL,
                       stat        = "identity",
                       position    = "identity",
@@ -39,7 +20,7 @@ geom_lime <- function(mapping     = NULL,
     data        = data,
     mapping     = mapping,
     stat        = stat,
-    geom        = GeomLime,
+    geom        = GeomPint,
     position    = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
@@ -52,7 +33,7 @@ geom_lime <- function(mapping     = NULL,
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#' GeomLime
+#' GeomPint
 #'
 #' @rdname ggplot2-ggproto
 #' @format NULL
@@ -62,8 +43,8 @@ geom_lime <- function(mapping     = NULL,
 #' @import grid
 #' @export
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-GeomLime <- ggplot2::ggproto(
-  "GeomLime", ggplot2::Geom,
+GeomPint <- ggplot2::ggproto(
+  "GeomPint", ggplot2::Geom,
   required_aes = c("x", "y"),
   non_missing_aes = c("size"),
   default_aes = ggplot2::aes(
@@ -73,7 +54,7 @@ GeomLime <- ggplot2::ggproto(
     fill   = NA,
     alpha  = NA,
     stroke = 0.5,
-    image_filename  = system.file("lime.png", package = "geomlime", mustWork = TRUE),
+    image_filename  = system.file("pint.png", package = "geomlime", mustWork = TRUE),
     scale = 5
   ),
 

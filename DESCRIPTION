@@ -1,7 +1,7 @@
 Package: geomlime
 Type: Package
 Title: Lime-Based Geom
-Version: 0.1.0
+Version: 0.1.1
 Author: mikefc
 Maintainer: mikefc <mikefc@coolbutuseless.com>
 Description: geom_lime.
@@ -11,4 +11,5 @@ LazyData: true
 RoxygenNote: 7.1.1
 Imports:
     grid,
-    ggplot2
+    ggplot2,
+    png
